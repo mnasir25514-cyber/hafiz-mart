@@ -1,25 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HAFIZ MART - Receipt</title>
-    <link rel="stylesheet" href="../assets/css/styles.css">
-</head>
-<body>
-    <div id="header"></div>
+<main class="container">
+    <h1>Your Order Receipt</h1>
 
-    <main class="container">
-        <h1>Your Order Receipt</h1>
-        <div id="receipt-details" class="receipt-details">
-            <p class="empty-receipt">No order found. Please place an order first.</p>
-        </div>
-        <button id="whatsapp-button" class="button" disabled>Send Receipt via WhatsApp</button>
-    </main>
+    <div id="receipt-details" class="receipt-details">
+        <p class="empty-receipt">
+            No order found. Please place an order first.
+        </p>
+    </div>
 
-    <div id="footer"></div>
+    <button id="whatsapp-button" class="button" disabled>
+        Send Receipt via WhatsApp
+    </button>
+</main>
 
-    <script src="../utils/whatsapp-api.js"></script>
-    <script src="../assets/js/app.js"></script>
-</body>
-</html>
+<div id="footer"></div>
+
+<script src="whatsapp-api.js"></script>
+<script src="app.js"></script>
