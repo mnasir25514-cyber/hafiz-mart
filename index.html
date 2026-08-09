@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HAFIZ MART</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+    <div id="header"></div>
+
+    <main class="container">
+        <div class="page-header">
+            <div>
+                <h1>Welcome to HAFIZ MART</h1>
+                <p class="page-subtitle">Search and order grocery products quickly in PKR with fast delivery.</p>
+            </div>
+            <div class="search-bar">
+                <input id="search-input" type="search" placeholder="Search products, brands, or categories" autocomplete="off">
+            </div>
+        </div>
+
+        <section id="product-list" class="product-grid">
+            <!-- Product cards will be injected here -->
+        </section>
+
+        <section class="cart-panel">
+            <h2>Your Cart</h2>
+            <ul id="cart-items" class="cart-items">
+                <li>No items added yet.</li>
+            </ul>
+            <div class="cart-summary">
+                <strong>Total:</strong> <span id="cart-total">PKR 0</span>
+            </div>
+
+            <div class="order-form">
+                <label for="delivery-address">Delivery Address</label>
+                <textarea id="delivery-address" rows="3" placeholder="Enter your delivery address"></textarea>
+
+                <label for="contact-number">Contact Number</label>
+                <input id="contact-number" type="tel" placeholder="+92 300 1234567">
+
+                <div class="form-actions">
+                    <button id="order-button" class="button" disabled>Submit Order</button>
+                </div>
+                <p id="form-message" class="form-message"></p>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer"></div>
+
+    <script src="../assets/js/app.js"></script>
+</body>
+</html>
