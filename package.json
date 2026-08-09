@@ -1,0 +1,25 @@
+{
+  "name": "hafiz-mart",
+  "version": "1.0.0",
+  "description": "An online shopping website for grocery items.",
+  "main": "src/assets/js/app.js",
+  "scripts": {
+    "start": "live-server src",
+    "build": "echo 'Build process here'",
+    "test": "echo 'No tests specified'"
+  },
+  "keywords": [
+    "grocery",
+    "shopping",
+    "online",
+    "responsive"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.21.1"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.1"
+  }
+}
