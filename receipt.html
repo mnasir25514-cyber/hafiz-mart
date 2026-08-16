@@ -2,7 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>Order Receipt | HAFIZ MART</title>
 
@@ -17,11 +20,15 @@
 
         <div class="receipt-wrapper">
 
-            <!-- Success Header -->
             <div class="receipt-success">
-                <div class="success-icon">✓</div>
 
-                <h1>Order Confirmed!</h1>
+                <div class="success-icon">
+                    ✓
+                </div>
+
+                <h1>
+                    Order Confirmed!
+                </h1>
 
                 <p>
                     Thank you for shopping with
@@ -31,25 +38,24 @@
                 <span class="receipt-status">
                     Cash on Delivery
                 </span>
+
             </div>
 
-
-            <!-- Receipt -->
-            <div id="receipt-details" class="modern-receipt">
-
+            <div
+                id="receipt-details"
+                class="modern-receipt"
+            >
                 <div class="loading-receipt">
                     Loading your order...
                 </div>
-
             </div>
 
-
-            <!-- Actions -->
             <div class="receipt-actions">
 
                 <button
                     id="whatsapp-button"
                     class="button whatsapp-button"
+                    type="button"
                     disabled
                 >
                     📱 Send Receipt via WhatsApp
@@ -58,29 +64,35 @@
                 <button
                     id="shop-button"
                     class="button secondary-button"
-                    onclick="window.location.href='index.html'"
+                    type="button"
                 >
                     🛒 Continue Shopping
                 </button>
 
             </div>
 
-
             <p class="receipt-note">
-                Please keep your phone available. Our team may contact you
-                regarding your delivery.
+                Please keep your phone available.
+                Our team may contact you regarding your delivery.
             </p>
 
         </div>
 
     </main>
 
-
     <div id="footer"></div>
 
-
-    <script src="utils/whatsapp-api.js"></script>
+    <!-- ROOT FILE, NOT utils/ -->
+    <script src="whatsapp-api.js"></script>
     <script src="app.js"></script>
+
+    <script>
+        document
+            .getElementById("shop-button")
+            ?.addEventListener("click", () => {
+                window.location.href = "index.html";
+            });
+    </script>
 
 </body>
 </html>
