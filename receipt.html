@@ -1,18 +1,86 @@
-<main class="container">
-    <h1>Your Order Receipt</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <div id="receipt-details" class="receipt-details">
-        <p class="empty-receipt">
-            No order found. Please place an order first.
-        </p>
-    </div>
+    <title>Order Receipt | HAFIZ MART</title>
 
-    <button id="whatsapp-button" class="button" disabled>
-        Send Receipt via WhatsApp
-    </button>
-</main>
+    <link rel="stylesheet" href="styles.css">
+</head>
 
-<div id="footer"></div>
+<body>
 
-<script src="whatsapp-api.js"></script>
-<script src="app.js"></script>
+    <div id="header"></div>
+
+    <main class="receipt-page">
+
+        <div class="receipt-wrapper">
+
+            <!-- Success Header -->
+            <div class="receipt-success">
+                <div class="success-icon">✓</div>
+
+                <h1>Order Confirmed!</h1>
+
+                <p>
+                    Thank you for shopping with
+                    <strong>HAFIZ MART</strong>.
+                </p>
+
+                <span class="receipt-status">
+                    Cash on Delivery
+                </span>
+            </div>
+
+
+            <!-- Receipt -->
+            <div id="receipt-details" class="modern-receipt">
+
+                <div class="loading-receipt">
+                    Loading your order...
+                </div>
+
+            </div>
+
+
+            <!-- Actions -->
+            <div class="receipt-actions">
+
+                <button
+                    id="whatsapp-button"
+                    class="button whatsapp-button"
+                    disabled
+                >
+                    📱 Send Receipt via WhatsApp
+                </button>
+
+                <button
+                    id="shop-button"
+                    class="button secondary-button"
+                    onclick="window.location.href='index.html'"
+                >
+                    🛒 Continue Shopping
+                </button>
+
+            </div>
+
+
+            <p class="receipt-note">
+                Please keep your phone available. Our team may contact you
+                regarding your delivery.
+            </p>
+
+        </div>
+
+    </main>
+
+
+    <div id="footer"></div>
+
+
+    <script src="utils/whatsapp-api.js"></script>
+    <script src="app.js"></script>
+
+</body>
+</html>
