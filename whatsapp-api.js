@@ -4,81 +4,28 @@ function sendWhatsAppMessage(
     address,
     contactNumber
 ) {
-
-    const phoneNumber =
-        "923141322340";
-
-
-    const message =
-        formatOrderMessage(
-            orderItems,
-            totalAmount,
-            address,
-            contactNumber
-        );
-
-
-    const apiUrl =
-        `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(message)}`;
-
-
-    window.open(
-        apiUrl,
-        "_blank"
-    );
-}
-
-
-function formatOrderMessage(
-    orderItems,
-    totalAmount,
-    address,
-    contactNumber
-) {
+    const phoneNumber = "923141322340";
 
     let message =
         "🛒 HAFIZ MART - NEW ORDER\n\n";
 
-
-    message +=
-        "ORDER DETAILS\n";
-
-    message +=
-        "-------------------------\n\n";
-
-
     orderItems.forEach(item => {
-
         const itemTotal =
-            item.unitPrice * item.quantity;
-
-
-        message +=
-            `Product: ${item.name}\n`;
+            Number(item.unitPrice) *
+            Number(item.quantity);
 
         message +=
-            `Size: ${item.size}\n`;
-
-        message +=
-            `Quantity: ${item.quantity}\n`;
-
-        message +=
+            `Product: ${item.name}\n` +
+            `Size: ${item.size}\n` +
+            `Quantity: ${item.quantity}\n` +
             `Price: PKR ${itemTotal.toLocaleString("en-PK")}\n\n`;
-
     });
 
-
     message +=
-        "-------------------------\n";
-
+        "------------------------------\n";
 
     message +=
         `TOTAL: PKR ${Number(totalAmount).toLocaleString("en-PK")}\n\n`;
-
-
-    message +=
-        "DELIVERY INFORMATION\n\n";
-
 
     message +=
         `Address: ${address}\n`;
@@ -86,18 +33,21 @@ function formatOrderMessage(
     message +=
         `Contact: ${contactNumber}\n\n`;
 
-
     message +=
         "Payment: Cash on Delivery\n\n";
-
 
     message +=
         "Thank you for ordering from HAFIZ MART!";
 
+    const url =
+        `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(message)}`;
 
-    return message;
+    window.open(
+        url,
+        "_blank",
+        "noopener,noreferrer"
+    );
 }
-
 
 window.sendWhatsAppMessage =
     sendWhatsAppMessage;
